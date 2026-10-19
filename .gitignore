@@ -33,3 +33,6 @@ outputs/*.csv
 outputs/*.json
 outputs/*.png
 download.log
+
+# Analysis run logs
+run.log

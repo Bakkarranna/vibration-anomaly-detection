@@ -1,7 +1,0 @@
-Building feature table from 40 files ...
-  1626 segments, columns: 22
-Protocol 1: train on healthy + 0.007 in, test on unseen sizes
-Protocol 2: leave one file out on healthy + 0.007 in
-  unseen_size: segment 71.25%, file 66.67% (24 files)
-  lofo: segment 100.00%, file 100.00% (12 files)
-  figures and tables in outputs
