@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-import numpy as np
+import dataclasses
+
 import pytest
 
 from vibdiag.catalogue import (
     FILES,
     LOADS_HP,
     NOMINAL_RPM,
-    SAMPLE_RATE_HZ,
     FileRecord,
     download_manifest,
     file_ids,
@@ -27,7 +27,7 @@ def test_every_fault_class_has_three_sizes_and_four_loads():
         records = [r for r in FILES.values() if r.label == label]
         assert len(records) == 12, label
         assert sorted({r.defect_size_in for r in records}) == [0.007, 0.014, 0.021], label
-        for size in {0.007, 0.014, 0.021}:
+        for size in (0.007, 0.014, 0.021):
             sizes = sorted(r.load_hp for r in records if r.defect_size_in == size)
             assert sizes == sorted(LOADS_HP), (label, size)
 
@@ -66,5 +66,5 @@ def test_download_manifest_describes_every_file():
 
 def test_file_record_is_immutable():
     record = FileRecord(97, "healthy", None, 0.0)
-    with pytest.raises(Exception):
+    with pytest.raises(dataclasses.FrozenInstanceError):
         record.label = "inner_race"  # type: ignore[misc]

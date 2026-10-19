@@ -15,9 +15,9 @@ present. Two files are known quirks: 98 has no RPM channel and 99 stores the
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterator
 
 import numpy as np
 from scipy.io import loadmat
@@ -130,6 +130,12 @@ def download_manifest() -> list[tuple[int, str, str]]:
     for file_id in file_ids():
         record = FILES[file_id]
         size = "-" if record.defect_size_in is None else f"{record.defect_size_in:.3f}"
-        rows.append((file_id, record.label, f"{record.label.replace('_', ' ')}, "
-                     f"{record.load_hp:g} hp, {size} in"))
+        rows.append((
+            file_id,
+            record.label,
+            (
+                f"{record.label.replace('_', ' ')}, "
+                f"{record.load_hp:g} hp, {size} in"
+            ),
+        ))
     return rows

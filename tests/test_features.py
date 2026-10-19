@@ -28,7 +28,7 @@ def _impulse_train(rate_hz: float, decay: float = 60.0) -> np.ndarray:
     envelope = np.zeros(SAMPLE_SIZE)
     spacing = max(1.0, FS / rate_hz)
     for start in np.arange(0, SAMPLE_SIZE, spacing):
-        index = int(round(start))
+        index = round(start)
         if index >= SAMPLE_SIZE:
             break
         envelope[index] += 1.0

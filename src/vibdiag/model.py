@@ -23,14 +23,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from .catalogue import FILES, iter_dataset, load_signal
+from .catalogue import FILES, load_signal
 from .features import DEFECT_NAMES, feature_names, segment_features, segments_of
 
 TRAIN_SIZES = (None, 0.007)  # healthy plus the smallest defect

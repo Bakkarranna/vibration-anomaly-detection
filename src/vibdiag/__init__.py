@@ -48,18 +48,18 @@ from .report import (
 )
 
 __all__ = [
+    "FILES",
     "BearingGeometry",
     "defect_frequencies_hz",
-    "FILES",
     "download_manifest",
+    "envelope_spectrum",
     "iter_dataset",
     "load_signal",
-    "envelope_spectrum",
-    "segment_features",
-    "segments_of",
     "plot_band_peaks",
     "plot_confusion",
     "plot_envelope_spectra",
+    "segment_features",
+    "segments_of",
     "write_metrics",
     "write_tables",
 ]

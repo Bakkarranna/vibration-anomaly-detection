@@ -13,14 +13,14 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
-import numpy as np  # noqa: E402
-import pandas as pd  # noqa: E402
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-from .bearing import BearingGeometry, defect_frequencies_hz  # noqa: E402
-from .catalogue import load_signal  # noqa: E402
-from .features import DEFECT_NAMES, envelope_spectrum  # noqa: E402
-from .model import Evaluation  # noqa: E402
+from .bearing import BearingGeometry, defect_frequencies_hz
+from .catalogue import load_signal
+from .features import DEFECT_NAMES, envelope_spectrum
+from .model import Evaluation
 
 CLASS_ORDER = ("healthy", "inner_race", "ball", "outer_race")
 

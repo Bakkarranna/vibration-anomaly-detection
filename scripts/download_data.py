@@ -17,7 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-from vibdiag.catalogue import download_manifest, file_ids  # noqa: E402
+from vibdiag.catalogue import download_manifest, file_ids
 
 BASE = "https://engineering.case.edu/sites/default/files"
 
